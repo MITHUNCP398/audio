@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ .maintxt {position: relative;}
+ .maintxt > img, .overlay-text {position: absolute;}
+
+
+ <style>
+
+  body{
+    padding: 0;
+    margin: 0;
+  }
+
+  .btn-outline-dark:hover {
+            background-color: rgb(146, 144, 144);
+            color: azure;
+        
+        }
+        .list-group{
+            display: flex;
+            flex-direction: row;
+        }
+        .dropdown-item:hover{
+          background-color: beige;
+          color: black;
+  }
+        .btn-outline-dark:hover {
+            background-color: rgb(146, 144, 144);
+            color: azure;
+        
+        }
+
+        .hovereffect {
+width:100%;
+height:100%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+display:block;
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect h2 {
+text-transform:uppercase;
+color:#fff;
+text-align:center;
+position:relative;
+font-size:17px;
+background:rgba(0,0,0,0.6);
+-webkit-transform:translatey(-100px);
+-ms-transform:translatey(-100px);
+transform:translatey(-100px);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+padding:10px;
+}
+
+.hovereffect a.info {
+text-decoration:none;
+display:inline-block;
+text-transform:uppercase;
+color:#fff;
+border:1px solid #fff;
+background-color:transparent;
+opacity:0;
+filter:alpha(opacity=0);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+margin:50px 0 0;
+padding:7px 14px;
+}
+
+.hovereffect a.info:hover {
+box-shadow:0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+opacity:1;
+filter:alpha(opacity=100);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+-webkit-transition-delay:.2s;
+transition-delay:.2s;
+} 
+
+ </style>
+
+
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark bg-warning  fixed-top"  style="position: sticky0;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-top text-bg-warning text-center " style="height: 600px;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
+              <button type="button" class="btn-close btn-close-white " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav  ">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Watch video</a>
+                </li>
+<!--  -->
+
+
+
+
+
+<!--  -->
+                
+                <li class="nav-item dropdown bg-warning">
+                  <a class="nav-link dropdown-toggle bg-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"  >
+                   Blocks
+                  </a>
+                  <ul class="dropdown-menu dropdown- bg-warning" style="text-align: center ; width: 100%; ">
+                    <li><a class="dropdown-item "  href="#">Menu page</a></li >
+                    <li><a class="dropdown-item " href="#">Headers</a></li>
+                    <li><a class="dropdown-item "  href="#">Images & videos</a></li >
+                    <li><a class="dropdown-item " href="#">Shops</a></li>
+                    <li><a class="dropdown-item "  href="#">Features</a></li >
+                    <li><a class="dropdown-item " href="#">Info </a></li>
+                    <li><a class="dropdown-item "  href="#">TERMS AND TESTIMONIALS</a></li >
+                    <li><a class="dropdown-item " href="#">FORMS & MAPS</a></li>
+                    <li><a class="dropdown-item " href="#">PRICING TABLES</a></li>
+                    <li><a class="dropdown-item " href="#">Tables</a></li>
+                    <li><a class="dropdown-item " href="#">Social</a></li>
+                  </ul>
+                </li>
+                <!--  
+
+
+
+                -->
+                <li class="nav-item dropdown bg-warning" >
+                  <a class="nav-link dropdown-toggle bg-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                   DEMO PAGE
+                  </a>
+                  <ul class="dropdown-menu dropdown- bg-warning" style="text-align: center ; width: 100%; ">
+                    <li><a class="dropdown-item "  href="#">Headphone shop</a></li >
+                      <li><a class="dropdown-item "  href="#">Shoe shop</a></li >
+                    <li><a class="dropdown-item " href="#">Cafe</a></li>
+                  </ul>
+                </li>
+
+                <!--  -->
+                <div class="row">
+                  <div class="col-5"></div>
+                  <div class="col-auto ms-5"><i class="fa-brands fa-facebook" style="color: #fcfcfc;"></i></div>
+                  <div class="col-auto"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
+                  <div class="col-auto"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
+                  <div class="col-6"></div>
+                </div>
+                <!--  -->
+              </ul>
+              <br>
+              <button type="button" class="btn btn-light"
+               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+               BUY NOW
+              </button>
+             </div>
+           
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="banner">
+        <img src="https://occamsec.com/wp-content/uploads/2023/03/resources-page-banner.jpg" alt="bnr" style="width: 100%;">
+        <div class="card-img-overlay">
+          <br><br><br><br><br><br><br><br><br><br>
+      <P class="card-title ms-5">THINKING OF BUYING A HEADPHONE?</P>
+      <h1 class="card-title ms-5";><strong>Welcome to our</strong></h1>
+      <h1 class="card-title ms-5"><strong>Headphons shop</strong></h1>
+      <br>
+      <button type="button " class="btn btn-light ms-5"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  BUY NOW
+</button>
+     
+      </div>
+      </div>
+
+      <section>
+        <div class="content p-5">
+          <h1>Find a quality and right headphones is not easy</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi velit odio atque aliquam quam, ipsum ab repudiandae eos voluptatum doloribus cupiditate, optio minus nam recusandae deserunt animi vel dolores quasi.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium veniam assumenda sapiente molestias labore aliquam deleniti eveniet fugiat consequatur animi accusantium incidunt modi, in corporis. Dolorem cupiditate exercitationem dicta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non iure enim amet dicta! Quasi cum enim aut est ratione dignissimos ut maiores excepturi rerum doloribus tempore, recusandae at, sunt culpa.
+          </p>
+
+        </div>
+      </section>
+      <div class="main bg-warning text-light" style="text-align: center;">
+        <h1>We will help you to choose the best headphone</h1>
+      </div>
+      <div class="text text-dark p-5">
+        <h1>Hottest headphone of the month</h1>
+      </div>
+
+
+      <div class="row text-center ">
+        <div class="col-2"></div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+          <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg?auto=webp&quality=75&width=1024" class="card-img-top" alt="img1">
+          <div class="card-img-overlay">
+            <button type="button " class="btn btn-light "
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+      HEADPHONES
+    </button>
+         
+          </div>
+          <div class="card-body">
+            <h3>HEADPHONES</h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg?auto=webp&quality=75&width=1024" class="card-img-top" alt="img1">
+        <div class="card-img-overlay">
+          <button type="button " class="btn btn-light "
+          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+    HEADPHONES
+  </button>
+       
+        </div>
+        <div class="card-body">
+          <h3>HEADPHONES</h3>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+      <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg?auto=webp&quality=75&width=1024" class="card-img-top" alt="img1">
+      <div class="card-img-overlay">
+        <button type="button " class="btn btn-light "
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  HEADPHONES
+</button>
+     
+      </div>
+      <div class="card-body">
+        <h3>HEADPHONES</h3>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-1"></div>
+        
+
+      </div>
+
+
+      <div class="text text-dark p-5">
+        <h1>Meet our new headphones </h1>
+      </div>
+<!--  -->
+
+<div class="row m-4 p-2 ">
+
+  <div class="col-3 rounded-4 ">
+
+
+    <div class="hovereffect">
+      <img class="img-responsive" src="https://elcytec.com/wp-content/uploads/2021/07/elcytec_skullcandy_crusher-2.webp" width="340px" height="320px" alt="">
+      <div class="overlay">
+         <h2>SKULLCANDY</h2>
+         <a class="info" href="#">SHOP THIS</a>
+      </div>
+  </div>
+  
+   
+    </div>
+      <div class="col-3 rounded-4 ">
+
+    <div class="hovereffect">
+      <img class="img-responsive" src="https://media.croma.com/image/upload/v1674045691/Croma%20Assets/Communication/Headphones%20and%20Earphones/Images/242883_0_yknibt.png" width="320px" height="350px"  alt="">
+      <div class="overlay">
+         <h2>PHILIPS</h2>
+         <a class="info" href="#">SHOP THIS</a>
+      </div>
+  </div>
+
+  </div>
+
+  <div class="col-3 rounded-4 ">
+
+    <div class="hovereffect">
+      <img class="img-responsive" src="https://www.boat-lifestyle.com/cdn/shop/products/e5881832-36f8-4c1c-a767-10f2c2a55a02_600x.png?v=1685708053" width="320px" alt="">
+      <div class="overlay">
+         <h2>BOAT</h2>
+         <a class="info" href="#">SHOP THIS</a>
+      </div>
+  </div>
+
+
+   
+    </div>
+
+    <div class="col-3 rounded-4">
+
+      <div class="hovereffect">
+        <img class="img-responsive" src="https://m.media-amazon.com/images/I/61HLHeghxkS._AC_UF894,1000_QL80_.jpg" width="320px"  alt="">
+        <div class="overlay">
+           <h2>iCLEVER HS21</h2>
+           <a class="info" href="#">SHOP THIS</a>
+        </div>
+    </div>
+
+
+     
+      </div>
+
+  </div>
+  <br>
+
+  
+
+
+
+
+
+
+
+
+
+<!--  -->
+       
+      
+        <div class="hovereffect">
+
+      <div class="row p-5">
+        <div class="col-3"><div class="card" style="width: 18rem;">
+          <img src="https://d3lnc7yu1ksdj.cloudfront.net/wp-content/uploads/2023/06/4-scaled.jpg" class="card-img-top" alt="..." style="height: 160px;">
+
+          <div class="card-img-overlay text-light mt-5">
+            SHOP NOW
+            </div>
+         
+        </div></div>
+
+
+        <div class="col-3"><div class="card" style="width: 18rem;">
+  <img src="https://www.jagranimages.com/images/newimg/05092023/05_09_2023-best_gaming_headphones_23522287.jpg" class="card-img-top" alt="...">
+  <div class="card-img-overlay text-light mt-5">
+    SHOP NOW
+    </div>
+  
+</div></div>
+
+
+        <div class="col-3"><div class="card" style="width: 18rem;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQejN2EZ-iusRh9tEVszCbDArfOgVNCfiEpuQ&usqp=CAU" class="card-img-top" alt="...">
+          <div class="card-img-overlay text-light mt-5">
+            SHOP NOW
+            </div>
+          
+        </div></div>
+
+
+
+        <div class="col-3"><div class="card" style="width: 18rem;">
+         <img src="https://www.jagranimages.com/images/newimg/16082023/16_08_2023-best_over_ear_headphones_23502847.jpg" class="card-img-top" alt="...">
+         <div class="card-img-overlay text-light mt-5" >
+          SHOP NOW
+          </div>
+        
+</div></div>
+
+
+      </div>
+
+    </div>
+    <section id="img">
+
+
+      
+
+
+      </div>
+
+    </section>
+    <div class="pre  bg-warning text-light pt-5  ">
+      <h1 style="margin-left: 50px;">Like it? Pre-order and get a discount</h1>
+      <br>
+      <button type="button  " class="btn btn-light "
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; align-items: var(--bs-btn-padding-y);">
+  BUY NOW
+</button>
+    </div>
+  
+
+    <div class="pre  text-dark  ">
+       <h1 style="text-align: center;">Why do you have to buy headphones only from us?</h1>
+
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+  <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+  <div class="card-img-overlay text-light mt-5">
+            HIGH QUALITY
+            </div>
+  <div class="card-body">
+    
+    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias inventore obcaecati, consequatur itaque saepe enim velit minus architecto in non iste ad cum eum optio beatae delectus cupiditate. A, aperiam.</p>
+    <div class="test text-warning"><P>Learn more..</P></div>
+  </div>
+</div>
+      </div>
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWbJUa-F-6K21iVUjR9k155Pu1lV3j6QevZA&usqp=CAU" class="card-img-top" alt="..." style="height: 180px;">
+  <div class="card-img-overlay text-light mt-5">
+    ORIGINAL DEVICES
+    </div>
+  <div class="card-body">
+    
+    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam quas fugiat odio repudiandae possimus laudantium, sit alias officia optio doloremque rerum nobis, distinctio dolorum architecto numquam commodi? HV</p>
+    <div class="test text-warning"><P>Learn more..</P></div>
+  </div>
+</div>
+      </div>
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+  <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+  <div class="card-img-overlay text-light mt-5">
+    YEAR WARRENTY
+    </div>
+  <div class="card-body">
+    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, est voluptatum dolore eaque aliquid voluptate modi delectus vero quisquam dolor nulla voluptas cumque. Nobis, iste! Nulla quam ipsum vel optio!</p>
+    <div class="test text-warning"><P>Learn more..</P></div>
+  </div>
+</div>
+      </div>
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+  <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+  <div class="card-img-overlay text-light mt-5">
+   WEEK TO CHECK
+    </div>
+  <div class="card-body">
+    
+    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum beatae modi temporibus officia, sed perspiciatis neque voluptatum ipsam. Eius totam numquam maiores quia cumque porro adipisci est quae magni unde.</p>
+    <div class="test text-warning"><P>Learn more..</P></div>
+  </div>
+</div>
+      </div>
+
+    </div>
+    <BR><BR>
+
+    <div class="text " style="text-align: center;"><p>STILL NOT CONVINCED</p></div>
+
+    <div class="text " style="text-align: center;"><h2>Visit us and see your self!</h2></div>
+
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.4951940095552!2d76.22268275981511!3d10.037606477369335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0813ceaaaaaaab%3A0x49017e8d47c2f888!2sBlue%20Dart%20Express%20Limited!5e0!3m2!1sen!2sin!4v1705228188362!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+
+
+    <!-- footer -->
+    <footer class="text-center bg-body-tertiary">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <img src="https://c1.wallpaperflare.com/preview/729/690/547/headphone-black-yellow-shadow.jpg" style="width: 80px; height: 70px; " alt="">
+          <!-- Facebook -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-facebook" style="color: #FFD43B;"></i>
+    
+          <!-- Twitter -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-twitter" style="color: #FFD43B;"></i>
+    
+          <!-- Google -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-google" style="color: #FFD43B;"></i>
+    
+          <!-- Instagram -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-instagram" style="color: #FFD43B;"></i>
+    
+          <!-- Linkedin -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-linkedin" style="color: #FFD43B;"></i>
+          <!-- Github -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-github" style="color: #FFD43B;"></i>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Copyright:
+        <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+</body>
+</html> 
